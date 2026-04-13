@@ -1,1 +1,0 @@
-{"skill_name":"skill-creator","description":"Create new skills","results":[{"query":"Create a new skill for summarizing text","should_trigger":true,"trigger_rate":0.0,"triggers":0,"runs":3,"pass":false}],"summary":{"total":1,"passed":0,"failed":1}}
