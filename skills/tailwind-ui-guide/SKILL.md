@@ -1,6 +1,9 @@
 ---
 name: tailwind-ui-guide
 description: A Tailwind UI design system guide for building consistent, accessible interfaces. Use this whenever the user asks about Tailwind UI, theming, component styling, color palettes, dark mode, or any Tailwind-driven layout or redesign, even if they do not explicitly mention “design system” or “tokens.”
+metadata:
+  author: Jonas Alessi
+  reference: Tailwind article about color guide
 ---
 
 # Tailwind UI Guide (Design System + Tokens)

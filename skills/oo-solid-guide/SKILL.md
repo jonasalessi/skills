@@ -1,11 +1,14 @@
 ---
 name: oo-solid-guide
 description: Guide for applying OO and SOLID principles when writing, reviewing, or refactoring code. Use this skill when is creating classes, designing interfaces, refactoring existing code, performing code reviews, discussing architecture, designing domain models, or working with inheritance/composition — even if they don't explicitly mention 'OO' or 'SOLID'
+metadata:
+  author: Jonas Alessi
+  reference: Orientação a Objetos e SOLID para Ninjas by Mauricio Aniche
 ---
 
 # OO & SOLID Design Guide
 
-A practical guide for writing clean, maintainable Object-Oriented code. Based on the principles from *"Orientação a Objetos e SOLID para Ninjas"* by Mauricio Aniche.
+A practical guide for writing clean, maintainable Object-Oriented code. Based on the principles from *"Orientação a Objetos e SOLID para Ninjas"*.
 
 ## The Puzzle Metaphor
 
