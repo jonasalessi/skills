@@ -1,6 +1,6 @@
 ---
 name: oo-solid-guide
-description: Object-Oriented and SOLID design principles guide for writing, reviewing, and refactoring production code. Use this skill whenever the user is creating classes, designing interfaces, refactoring existing code, performing code reviews, discussing architecture, designing domain models, or working with inheritance/composition — even if they don't explicitly mention "OO" or "SOLID". Also trigger when you spot code smells like God Classes, fat controllers, anemic models, excessive if/else chains, Law of Demeter violations, or broken encapsulation. This skill applies to any OO language (Kotlin, Java, TypeScript, C#, Python, etc.).
+description: Guide for applying OO and SOLID principles when writing, reviewing, or refactoring code. Use this skill when is creating classes, designing interfaces, refactoring existing code, performing code reviews, discussing architecture, designing domain models, or working with inheritance/composition — even if they don't explicitly mention 'OO' or 'SOLID'
 ---
 
 # OO & SOLID Design Guide
