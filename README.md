@@ -1,6 +1,6 @@
 # Jonas Alessi's Skills
 
-Skills created based on interresting topics I found during reading.
+Skills created based on interesting topics I found during reading.
 
 ## Installation
 
