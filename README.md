@@ -9,5 +9,5 @@ Skills created based on interesting topics I found during reading.
 Install this repository into your agent skills directory with the [`skills`](https://www.npmjs.com/package/skills) CLI:
 
 ```bash
-npx skills add https://github.com/jonaslaessi/skills
+npx skills add https://github.com/jonasalessi/skills
 ```
