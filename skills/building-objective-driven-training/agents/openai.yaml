@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Objective-Driven Training"
+  short_description: "Create training from trusted workspace sources"
+  default_prompt: "Use $building-objective-driven-training to build the training defined by objective.md and sources.md."
