@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+  <title>From a GitHub issue to a release: what the maintainer does, what the pipeline does, what lands on GitHub</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6e7781"/>
+    </marker>
+    <style>
+      .lane { fill: #6e7781; font-size: 12px; font-weight: 600; letter-spacing: .08em; }
+      .box  { stroke-width: 1.5; rx: 8; }
+      .you  { fill: #fff8c5; stroke: #d4a72c; }
+      .pipe { fill: #ddf4ff; stroke: #54aeff; }
+      .gh   { fill: #dafbe1; stroke: #4ac26b; }
+      .t    { fill: #1f2328; }
+      .b    { fill: #1f2328; font-weight: 600; }
+      .s    { fill: #57606a; font-size: 12px; }
+      .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+      .flow { stroke: #6e7781; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .loop { stroke: #d4a72c; stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; marker-end: url(#arrow); }
+      .rule { stroke: #d0d7de; stroke-width: 1; stroke-dasharray: 2 4; }
+    </style>
+  </defs>
+
+  <!-- lane headers -->
+  <text x="150" y="28" class="lane" text-anchor="middle">YOU</text>
+  <text x="480" y="28" class="lane" text-anchor="middle">PIPELINE</text>
+  <text x="810" y="28" class="lane" text-anchor="middle">GITHUB</text>
+  <line x1="300" y1="40" x2="300" y2="620" class="rule"/>
+  <line x1="660" y1="40" x2="660" y2="620" class="rule"/>
+
+  <!-- YOU: open an issue -->
+  <rect x="30" y="56" width="240" height="52" class="box you"/>
+  <text x="150" y="78" class="b" text-anchor="middle">Open an issue</text>
+  <text x="150" y="96" class="s" text-anchor="middle">a bug, a docs gap, or a feature idea</text>
+
+  <!-- GITHUB: issue -->
+  <rect x="690" y="56" width="240" height="52" class="box gh"/>
+  <text x="810" y="78" class="b" text-anchor="middle">Issue #N</text>
+  <text x="810" y="96" class="s" text-anchor="middle">the whole spec</text>
+  <path d="M 270 82 L 690 82" class="flow"/>
+
+  <!-- YOU: run -->
+  <rect x="30" y="136" width="240" height="60" class="box you"/>
+  <text x="150" y="158" class="b" text-anchor="middle">Run it</text>
+  <text x="150" y="176" class="code t" text-anchor="middle">/pipeline 12 release</text>
+  <text x="150" y="190" class="s" text-anchor="middle">or scripts/pipeline.sh, headless</text>
+  <path d="M 270 166 L 330 166" class="flow"/>
+
+  <!-- PIPELINE steps -->
+  <rect x="330" y="140" width="300" height="52" class="box pipe"/>
+  <text x="342" y="160" class="b">0  Project profile</text>
+  <text x="342" y="178" class="s">gate, merge strategy, changelog, release path</text>
+
+  <path d="M 480 192 L 480 210" class="flow"/>
+  <rect x="330" y="210" width="300" height="52" class="box pipe"/>
+  <text x="342" y="230" class="b">1  Open pull requests</text>
+  <text x="342" y="248" class="s">pr-audit · dependency-bump for bot bumps</text>
+
+  <path d="M 480 262 L 480 280" class="flow"/>
+  <rect x="330" y="280" width="300" height="52" class="box pipe"/>
+  <text x="342" y="300" class="b">2  Issues</text>
+  <text x="342" y="318" class="s">issue-audit: reproduce, root cause, fix plan</text>
+
+  <path d="M 480 332 L 480 350" class="flow"/>
+  <rect x="330" y="350" width="300" height="66" class="box pipe"/>
+  <text x="342" y="370" class="b">3  Approval policy</text>
+  <text x="342" y="388" class="s">bug or docs fix  →  approved, continue</text>
+  <text x="342" y="404" class="s">new functionality  →  proposal comment, wait</text>
+
+  <!-- YOU: decide (feature loop) -->
+  <path d="M 330 400 L 270 400" class="loop"/>
+  <rect x="30" y="366" width="250" height="82" class="box you"/>
+  <text x="150" y="388" class="b" text-anchor="middle">Decide</text>
+  <text x="150" y="406" class="s" text-anchor="middle">needs-decision label + plan comment</text>
+  <text x="150" y="422" class="s" text-anchor="middle">you answer: approved · wontfix · a reply</text>
+  <text x="150" y="438" class="s" text-anchor="middle">the next run resolves what was agreed</text>
+  <path d="M 150 448 L 150 512 L 330 512" class="loop"/>
+
+  <path d="M 480 416 L 480 486" class="flow"/>
+  <rect x="330" y="486" width="300" height="52" class="box pipe"/>
+  <text x="342" y="506" class="b">4  Resolve, one ticket at a time</text>
+  <text x="342" y="524" class="s">branch → test first → PR → green CI → merge</text>
+
+  <!-- GITHUB: PR + merge -->
+  <path d="M 630 512 L 690 512" class="flow"/>
+  <rect x="690" y="486" width="240" height="52" class="box gh"/>
+  <text x="810" y="506" class="b" text-anchor="middle">PR merged, issue closed</text>
+  <text x="810" y="524" class="s" text-anchor="middle">Closes #N · green CI on that SHA</text>
+
+  <path d="M 480 538 L 480 556" class="flow"/>
+  <rect x="330" y="556" width="300" height="52" class="box pipe"/>
+  <text x="342" y="576" class="b">5  Post-audit, then release</text>
+  <text x="342" y="594" class="s">release only with the word "release"</text>
+
+  <!-- GITHUB: release -->
+  <path d="M 630 582 L 690 582" class="flow"/>
+  <rect x="690" y="556" width="240" height="52" class="box gh"/>
+  <text x="810" y="576" class="b" text-anchor="middle">Tag + GitHub release</text>
+  <text x="810" y="594" class="s" text-anchor="middle">version from the changelog</text>
+
+  <!-- YOU: read the report -->
+  <path d="M 330 582 L 270 582" class="flow"/>
+  <rect x="30" y="556" width="240" height="52" class="box you"/>
+  <text x="150" y="576" class="b" text-anchor="middle">Read the report</text>
+  <text x="150" y="594" class="s" text-anchor="middle">"left for the maintainer" is your inbox</text>
+
+  <!-- footnote -->
+  <text x="480" y="632" class="s" text-anchor="middle">Solid arrows run without you. Dashed arrows are the one place a feature waits for your label.</text>
+</svg>
