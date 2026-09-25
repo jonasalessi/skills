@@ -58,14 +58,28 @@ is a rule every run follows.
 
 ## Install
 
-Copy the `skills/* ` into `~/.claude|agents/skills/`.
-Copy `scripts/pipeline.sh` somewhere on your project for headless runs.
+Open your agent in the target repository and point it at `setup.md`:
+
+```
+Follow /path/to/workflow/setup.md
+```
+
+It asks where the skills go, profiles the project, copies the skills and
+rewrites every spot marked with an `ADAPT` comment for that project: the
+gate, the default branch, the merge strategy, the labels, the changelog,
+the release mechanism, the rules and contracts. The comments are removed
+from the installed copies.
+
+Manual fallback: copy `skills/*` into `.agents/skills/` or `.claude/skills/`,
+then work through every `<!-- ADAPT ... -->` comment by hand. Copy
+`scripts/pipeline.sh` somewhere on your project for headless runs.
 
 ## Layout
 
 ```
 workflow/
 ├── README.md
+├── setup.md                prompt that installs and adapts the skills
 ├── assets/workflow.svg     the diagram above
 ├── scripts/pipeline.sh     headless runner
 └── skills/<name>/SKILL.md  one directory per skill
