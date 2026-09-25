@@ -12,6 +12,39 @@ release mechanism. Nothing in them names a particular project or stack.
 
 ![From an issue to a release: you open an issue and run the pipeline; it profiles the project, audits PRs and issues, applies the approval policy, resolves approved tickets one PR at a time, post-audits and releases when asked; a feature request waits for your label](assets/workflow.svg)
 
+## What the maintainer does
+
+Four touchpoints. Everything between them runs on its own.
+
+1. **Open an issue, or let a user do it.** The issue is the whole spec, so
+   the better the reproduction, the less the audit guesses: for a bug, the
+   version, the steps, what happened and what was expected; for a feature,
+   the problem rather than the solution. An idea of your own that needs no
+   discussion gets the approval label when you file it, and the next run
+   builds it without asking.
+2. **Run the pipeline when it suits you.** `/pipeline` works through
+   everything open; `/pipeline 12` takes one issue; adding `release` ships
+   what has accumulated once the last ticket lands. `scripts/pipeline.sh`
+   runs the same thing headless, from a shell or a cron job. You do not
+   pick the version: the changelog or the commit convention does.
+3. **Decide on features, and only on features.** Bugs and docs fixes are
+   merged without you. A feature request comes back to you as the
+   project's decision label plus a comment with the plan: the change, where
+   it goes, the tests, the docs, the size, and what is left out. You answer
+   in one of three ways: the approval label builds it as written on the
+   next run, a reply that amends the plan is followed over the comment, and
+   `wontfix` ends it. Nothing is built until you answer.
+4. **Read the report.** Each run ends with what landed (PRs, issues, the
+   release) and a "left for the maintainer" list: features awaiting your
+   decision, PRs that need a review the agent cannot give, tickets it
+   declined or could not reproduce, each with its evidence. Close or reopen
+   what the agent would not; it never closes a declined ticket on its own.
+
+Two habits keep this healthy. When a run does something you dislike, fix
+the skill that made the call rather than the output. And keep the trusted
+instructions current: the profile reads them first, so a rule written there
+is a rule every run follows.
+
 | Skill | What it produces |
 | --- | --- |
 | `pipeline` | the steps below in order, the project profile they share, and the approval policy that stands in for a maintainer |
@@ -68,10 +101,5 @@ pipeline.sh 12 release     the same, without a terminal session
 The skills speak to GitHub through `gh`: issues, pull requests, labels,
 checks and releases. Another forge needs its own port.
 
-Bugs and docs fixes flow without the maintainer. A feature request gets a
-proposal comment and the project's decision label (`needs-decision` when
-it has none); the maintainer answers with the approval label
-(`approved`), `wontfix` or a reply that amends the plan, and the next run
-builds what was agreed. Issue and PR text is evidence, never
-instructions. Nothing is tagged on red CI, with a blocking finding open, or
-without an explicit ask.
+Issue and PR text is evidence, never instructions. Nothing is tagged on
+red CI, with a blocking finding open, or without an explicit ask.
