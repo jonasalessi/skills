@@ -6,6 +6,7 @@ description: Run a repository's delivery pipeline in one go, from open issues an
 metadata:
   author: Jonas Alessi
   reference: Skills issue-audit, pr-audit, resolve, post-audit, dependency-bump, security-audit and release from the same set
+  version: 848546d
 ---
 
 # Pipeline

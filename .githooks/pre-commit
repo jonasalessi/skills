@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Stamps metadata.version of every staged workflow SKILL.md with the commit
+# the change is built on (HEAD). The commit that carries the content is the
+# first one after that hash touching the file; workflow/update.md relies on it.
+set -euo pipefail
+
+staged_skills() {
+  git diff --cached --name-only --diff-filter=AM -- 'workflow/skills/*/SKILL.md'
+}
+
+has_version_line() {
+  grep -q '^  version: ' "$1"
+}
+
+stamp_version() {
+  local file="$1" version="$2"
+  if has_version_line "$file"; then
+    perl -pi -e "s/^  version: \S+/  version: $version/" "$file"
+  else
+    perl -pi -e "s/^metadata:\n/metadata:\n  version: $version\n/" "$file"
+  fi
+  git add "$file"
+}
+
+main() {
+  local base
+  base=$(git rev-parse --short HEAD 2>/dev/null) || return 0
+  for file in $(staged_skills); do
+    stamp_version "$file" "$base"
+  done
+}
+
+main

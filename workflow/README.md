@@ -70,6 +70,16 @@ gate, the default branch, the merge strategy, the labels, the changelog,
 the release mechanism, the rules and contracts. The comments are removed
 from the installed copies.
 
+To update an installed set later:
+
+```
+Follow /path/to/workflow/update.md
+```
+
+Each `SKILL.md` records in `metadata.version` the source revision it came
+from. The update diffs that revision against the current one and merges
+only the change, so the adaptations made at setup time stay.
+
 Manual fallback: copy `skills/*` into `.agents/skills/` or `.claude/skills/`,
 then work through every `<!-- ADAPT ... -->` comment by hand. Copy
 `scripts/pipeline.sh` somewhere on your project for headless runs.
@@ -80,10 +90,23 @@ then work through every `<!-- ADAPT ... -->` comment by hand. Copy
 workflow/
 ├── README.md
 ├── setup.md                prompt that installs and adapts the skills
+├── update.md               prompt that brings installed skills to the current version
 ├── assets/workflow.svg     the diagram above
 ├── scripts/pipeline.sh     headless runner
 └── skills/<name>/SKILL.md  one directory per skill
 ```
+
+## Maintaining this set
+
+`metadata.version` is stamped by `.githooks/pre-commit` at the repository
+root: every staged `SKILL.md` gets the short hash of the commit the change
+is built on. Enable the hook once after cloning:
+
+```
+git config core.hooksPath .githooks
+```
+
+`.githooks/pre-commit.test.sh` checks the hook in a throwaway repository.
 
 ## What a project needs
 

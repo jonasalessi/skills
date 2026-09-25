@@ -10,6 +10,7 @@ description: Land bot-authored dependency pull requests (Dependabot, Renovate) a
 metadata:
   author: Jonas Alessi
   reference: Skills pr-audit and pipeline from the same set
+  version: 848546d
 ---
 
 # Dependency bump

@@ -8,6 +8,7 @@ description: Audit GitHub issues before any code is written. Verifies every clai
 metadata:
   author: Jonas Alessi
   reference: Skills pipeline and resolve from the same set
+  version: 848546d
 ---
 
 # Issue audit

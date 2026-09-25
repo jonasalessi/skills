@@ -8,6 +8,7 @@ description: Implement the approved outcome of an issue-audit or pr-audit, one t
 metadata:
   author: Jonas Alessi
   reference: Skills issue-audit, pr-audit, post-audit, release and pipeline from the same set
+  version: 848546d
 ---
 
 # Resolve

@@ -9,6 +9,7 @@ description: Audit open pull requests before merge. Verifies contributor claims 
 metadata:
   author: Jonas Alessi
   reference: Skills pipeline, dependency-bump, security-audit and resolve from the same set
+  version: 848546d
 ---
 
 # PR audit

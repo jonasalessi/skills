@@ -12,6 +12,7 @@ description: Threat-model and audit a repository, a commit range or a PR for exp
 metadata:
   author: Jonas Alessi
   reference: Skills post-audit and pr-audit from the same set
+  version: 848546d
 ---
 
 # Security audit

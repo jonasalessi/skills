@@ -10,6 +10,7 @@ description: Cut and publish a release the way the repository at hand releases. 
 metadata:
   author: Jonas Alessi
   reference: Skills post-audit and pipeline from the same set
+  version: 848546d
 ---
 
 # Release

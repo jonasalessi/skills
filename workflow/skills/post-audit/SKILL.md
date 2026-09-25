@@ -8,6 +8,7 @@ description: Audit the combined state of the default branch after a batch of mer
 metadata:
   author: Jonas Alessi
   reference: Skills release, security-audit and pipeline from the same set
+  version: 848546d
 ---
 
 # Post-audit
