@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dependency Bump"
+  short_description: "Land bot dependency PRs as one verified update"
+  default_prompt: "Use $dependency-bump to consolidate and land the open bot dependency pull requests."

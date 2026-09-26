@@ -104,12 +104,13 @@ adaptations survive:
 7. Show the user the diff of the installed file before and after, and wait
    for a yes before moving to the next skill.
 
-## 4. The headless runner
+## 4. Files copied unchanged
 
-When the destination has a copy of `scripts/pipeline.sh`, compare it with
-the source copy byte for byte. It is copied unchanged by `setup.md`, so a
-difference is either an upstream change (overwrite after showing the diff)
-or a local edit (show the diff and ask).
+For each skill's `agents/openai.yaml` and, when the destination has one,
+`scripts/pipeline.sh`, compare the installed copy with the source copy byte
+for byte. They are copied unchanged by `setup.md`, so a difference is
+either an upstream change (overwrite after showing the diff) or a local
+edit (show the diff and ask). A missing `agents/openai.yaml` is copied in.
 
 ## 5. Check
 
@@ -139,5 +140,5 @@ Source: <path> at <current hash>; destination: <path>
 - <skill>, <section>: <what conflicted and how it was resolved>
 
 ### Left for the maintainer
-- <skill>: <unknown version | removed upstream | local edit of pipeline.sh>
+- <skill>: <unknown version | removed upstream | local edit of pipeline.sh or openai.yaml>
 ```

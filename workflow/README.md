@@ -93,7 +93,9 @@ workflow/
 ├── update.md               prompt that brings installed skills to the current version
 ├── assets/workflow.svg     the diagram above
 ├── scripts/pipeline.sh     headless runner
-└── skills/<name>/SKILL.md  one directory per skill
+└── skills/<name>/
+    ├── SKILL.md            the skill
+    └── agents/openai.yaml  Codex display name and default prompt
 ```
 
 ## Maintaining this set

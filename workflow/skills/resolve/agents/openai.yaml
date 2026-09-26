@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resolve"
+  short_description: "Implement approved audit outcomes one ticket at a time"
+  default_prompt: "Use $resolve to implement what the audit approved, one ticket at a time."

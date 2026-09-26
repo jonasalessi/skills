@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pipeline"
+  short_description: "Run the delivery pipeline from issues to release"
+  default_prompt: "Use $pipeline to work through the open issues and pull requests of this repository."

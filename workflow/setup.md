@@ -79,7 +79,9 @@ repeats it.
 For each of `pipeline`, `pr-audit`, `dependency-bump`, `issue-audit`,
 `resolve`, `post-audit`, `security-audit` and `release`:
 
-1. Copy `skills/<name>/SKILL.md` to `<destination>/<name>/SKILL.md`.
+1. Copy `skills/<name>/SKILL.md` to `<destination>/<name>/SKILL.md` and
+   `skills/<name>/agents/openai.yaml` to `<destination>/<name>/agents/openai.yaml`
+   unchanged; Codex reads it for the display name and default prompt.
 2. Walk the file top to bottom. At each `ADAPT` comment:
    - Rewrite only the element the comment names: the frontmatter
      `description`, the next paragraph, list item, table or fenced block.
@@ -116,6 +118,8 @@ project profile", the comment tells you to state the facts instead.
   template.
 - Every `SKILL.md` starts with valid frontmatter whose `name:` equals its
   directory.
+- Every `agents/openai.yaml` is present and its `default_prompt` names
+  the skill with `$<name>`.
 - The gate command, the setup command and the advisory command in the
   skills run in this repository (run them once; fix the skill, not the
   project, when one does not).

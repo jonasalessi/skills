@@ -1,0 +1,4 @@
+interface:
+  display_name: "Post-Audit"
+  short_description: "Audit merged changes before deploy or release"
+  default_prompt: "Use $post-audit to audit the combined default-branch state before release."
