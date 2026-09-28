@@ -27,3 +27,7 @@ Builds a consistent, accessible Tailwind UI: defines an HSL palette, dark mode p
 Builds a custom technical training journey from an `objective.md` (target capability) and `sources.md` (trusted references) in the workspace. Manual invocation only; creates the templates and stops if either file is missing. 
 
 <img src="assets/study-example.png" alt="example" width="200"/>
+
+## Workflow
+
+Eight skills that take a GitHub issue to a merged change and a published release. Adapt them to your project before use. See [workflow/README.md](workflow/README.md).
