@@ -97,6 +97,7 @@ For each of `pipeline`, `pr-audit`, `dependency-bump`, `issue-audit`,
    `<default>`, `<gate>`, `<approval label>`, `<decision label>`,
    `<merge|rebase|squash>`, `<bump branch>`, `<manifest>`, `<package>`,
    `<advisory tool>`, `<project>`, `<mechanism>`, `<strategy>`,
+   `<skills directory>`,
    `<command>` where it stands for the gate. Placeholders that are report
    fields filled at run time stay: `<sha>`, `<result>`, `<url>`,
    `<conclusion>`, `<verdict>`, `<reason>`, `<title>`, `<tag>`,

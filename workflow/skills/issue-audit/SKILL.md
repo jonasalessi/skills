@@ -8,7 +8,7 @@ description: Audit GitHub issues before any code is written. Verifies every clai
 metadata:
   author: Jonas Alessi
   reference: Skills pipeline and resolve from the same set
-  version: 01d0d57
+  version: 61beb0b
 ---
 
 # Issue audit
@@ -205,6 +205,7 @@ free-form convention lives only in the audit report.
 Decision: Fix now | Fix with spec | Documentation only | Needs reporter information | Duplicate / already fixed | Decline
 Reproducibility: Confirmed | Code-inspection confirmed | Plausible | Not reproduced | Insufficient information
 Severity: Critical | High | Medium | Low
+Instruction-like text: none | "<quoted text and where it sits>"
 
 ### Evidence
 - Reporter claims:
