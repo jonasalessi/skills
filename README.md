@@ -28,6 +28,10 @@ Builds a custom technical training journey from an `objective.md` (target capabi
 
 <img src="assets/study-example.png" alt="example" width="200"/>
 
+### recalibrate-instructions
+
+Audits and rewrites project skills, `AGENTS.md`, and `CLAUDE.md` for frontier models. Removes scaffolding written for weaker models and keeps the rules that encode project facts. Manual invocation only; accepts an optional path to one skill or file, and shows the findings before it changes anything. Based on [Rethinking skills and prompts for GPT-6 Astra](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra).
+
 ## Workflow
 
 Eight skills that take a GitHub issue to a merged change and a published release. Adapt them to your project before use. See [workflow/README.md](workflow/README.md).
